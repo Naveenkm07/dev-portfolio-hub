@@ -120,7 +120,7 @@ const Home = () => {
       id: 1,
       icon: Globe,
       title: 'My Portfolio',
-      url: 'https://myportfolio.com',
+      url: 'https://naveenkm07.netlify.app/',
       description: 'View my projects & work',
       gradient: 'from-sky-400 to-blue-500'
     },

@@ -210,7 +210,7 @@ const Home = () => {
           </div>
           
           <h1 className="name-title reveal-on-scroll">
-            <span className="text-glitch" data-text="Naveen Kumar">Naveen Kumar</span>
+            <span className="text-glitch" data-text="Naveen Kumar K M">Naveen Kumar K M</span>
           </h1>
           
           <div className="subtitle-wrapper reveal-on-scroll">

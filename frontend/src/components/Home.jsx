@@ -200,7 +200,7 @@ const Home = () => {
             }}
           >
             <img
-              src="/goo.png"
+              src="/bio.png"
               alt="Naveen Kumar"
               className="profile-photo"
             />
@@ -320,7 +320,7 @@ const Home = () => {
           >
             <div className="photo-frame photo-frame-3d">
               <img
-                src="https://images.unsplash.com/photo-1604781109199-ced99b89b0f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzY5MzQxNDQ4fDA&ixlib=rb-4.1.0&q=85"
+                src="/aboutme.png"
                 alt="My Workspace"
                 className="about-photo"
               />

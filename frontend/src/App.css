@@ -252,7 +252,7 @@ a[href*="utm_source=emergent-badge"] {
 /* Profile Photo with 3D Effects */
 .profile-photo-wrapper {
   position: relative;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
 }

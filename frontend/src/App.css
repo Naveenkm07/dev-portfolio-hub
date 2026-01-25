@@ -240,6 +240,8 @@ a[href*="utm_source=emergent-badge"] {
   position: relative;
   z-index: 1;
   transform-style: preserve-3d;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-content {

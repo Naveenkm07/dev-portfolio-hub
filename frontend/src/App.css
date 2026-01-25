@@ -52,6 +52,10 @@ a[href*="utm_source=emergent-badge"] {
   min-height: 100vh;
   position: relative;
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== 3D GRID BACKGROUND ===== */

@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Frontend (Dev Portfolio Hub)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React frontend for **Dev Portfolio Hub**.
 
-## Available Scripts
+For the full monorepo setup (backend + database), see the root `README.md`.
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- React (Create React App) with **CRACO**
+- Tailwind CSS
+- Radix UI primitives
+- `lucide-react` icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (latest LTS recommended)
+- Yarn classic v1 (`yarn@1.22.22`)
 
-### `npm test`
+## Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create or edit `frontend/.env`:
 
-### `npm run build`
+- `REACT_APP_BACKEND_URL=http://localhost:8000`
+- `ENABLE_HEALTH_CHECK=false`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This repo also includes `WDS_SOCKET_PORT=443`. Keep it as-is unless you have a specific dev-server networking need.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+From the repo root:
 
-### `npm run eject`
+```bash
+yarn --cwd frontend install
+yarn --cwd frontend start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The dev server will usually start at `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Run these from `frontend/` (or with `yarn --cwd frontend <script>`):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `yarn start` Start dev server (CRACO)
+- `yarn build` Create a production build
+- `yarn test` Run tests
 
-## Learn More
+## Customize
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The main portfolio page is implemented in `src/components/Home.jsx` (hero, skills, links, about + animations).

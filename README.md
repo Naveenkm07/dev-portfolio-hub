@@ -1,113 +1,144 @@
-# Dev Portfolio Hub
+ # Dev Portfolio Hub
  
- A modern, animated developer bio/portfolio hub built as a small full‑stack monorepo:
+ A modern, animated developer portfolio hub built as a small full-stack monorepo.
  
- - **Frontend**: React (CRA) + **CRACO**, Tailwind CSS, Radix UI, lucide-react
- - **Backend**: **FastAPI** + Motor (async MongoDB)
- - **DB**: MongoDB
+ - **Frontend**: React (CRA) + CRACO
+ - **Backend**: FastAPI (ASGI) + Motor (async MongoDB)
+ - **Database**: MongoDB (local or Atlas)
  
- The UI is a single-page portfolio experience (hero, skills, links, about) with scroll reveal, 3D tilt, and parallax effects.
+ ## Highlights
+ 
+ - **Modern single-page portfolio** with sections for hero, skills, links, and about
+ - **Rich motion UX**: typing effect, scroll-reveal, 3D tilt, parallax background, navigation dots
+ - **Simple API** (`/api`) backed by MongoDB (sample status-check endpoints)
+ - **Monorepo structure** with clean separation: `frontend/` and `backend/`
  
  ## Tech Stack
  
- - **Frontend**
-   - React + react-router-dom
-   - Tailwind CSS + tailwind-merge + tailwindcss-animate
-   - Radix UI primitives
-   - lucide-react icons
-   - axios
- - **Backend**
-   - FastAPI
-   - Uvicorn
-   - Motor (AsyncIOMotorClient)
-   - python-dotenv
+ ### Frontend
+ 
+ - React + CRACO
+ - Tailwind CSS (`tailwind-merge`, `tailwindcss-animate`)
+ - Radix UI primitives
+ - `lucide-react` icons
+ - `axios`
+ 
+ ### Backend
+ 
+ - FastAPI
+ - Uvicorn
+ - Motor (`AsyncIOMotorClient`)
+ - `python-dotenv`
  
  ## Project Structure
  
- - `frontend/` React app (CRACO)
+ - `frontend/` React app
+   - `src/components/Home.jsx` main portfolio page
+   - `.env` frontend environment variables
  - `backend/` FastAPI app
-   - `server.py` API server
-   - `requirements.txt` Python deps
+   - `server.py` API server (routes mounted under `/api`)
+   - `requirements.txt` Python dependencies
    - `.env` backend environment variables
  
- ## Quick Start (Local)
+ ## Quickstart (Local)
  
- ### 1) Prerequisites
+ ### Prerequisites
  
- - **Node.js** (recommended: latest LTS)
- - **Yarn classic (v1)** (the repo specifies `yarn@1.22.22`)
- - **Python** (3.10+ recommended)
- - **MongoDB** running locally (or a MongoDB Atlas connection string)
+ - Node.js (latest LTS recommended)
+ - Yarn classic v1 (repo specifies `yarn@1.22.22`)
+ - Python 3.10+
+ - MongoDB (local) or MongoDB Atlas connection string
  
- ### 2) Backend setup
+ ### 1) Backend
  
  Create/edit `backend/.env`:
  
- - `MONGO_URL` (e.g. `mongodb://localhost:27017`)
- - `DB_NAME` (e.g. `test_database`)
- - `CORS_ORIGINS` (comma-separated; `*` for development)
+ - `MONGO_URL` (example: `mongodb://localhost:27017`)
+ - `DB_NAME` (example: `test_database`)
+ - `CORS_ORIGINS` (comma-separated, or `*` for local dev)
  
- Install deps and run the API:
+ Run:
  
- - `pip install -r backend/requirements.txt`
- - `uvicorn server:app --reload --host 0.0.0.0 --port 8000`
+ ```bash
+ pip install -r backend/requirements.txt
+ uvicorn --app-dir backend server:app --reload --host 0.0.0.0 --port 8000
+ ```
  
- API will be available at:
+ Backend URLs:
  
- - `http://localhost:8000/api/`
+ - API root: `http://localhost:8000/api/`
  - Swagger UI: `http://localhost:8000/docs`
  
- ### 3) Frontend setup
+ ### 2) Frontend
  
- Frontend environment is in `frontend/.env`.
- The app expects:
+ Ensure `frontend/.env` has the backend URL:
  
- - `REACT_APP_BACKEND_URL` (example: `http://localhost:8000`)
+ - `REACT_APP_BACKEND_URL=http://localhost:8000`
  
- Install deps and run:
+ Run:
  
- - `yarn --cwd frontend install`
- - `yarn --cwd frontend start`
+ ```bash
+ yarn --cwd frontend install
+ yarn --cwd frontend start
+ ```
  
- Frontend runs on CRA dev server (typically `http://localhost:3000`).
- 
- ## Scripts
- 
- ### Frontend (`frontend/`)
- 
- - `yarn start` - start dev server (CRACO)
- - `yarn build` - production build
- - `yarn test` - run tests
- 
- ### Backend (`backend/`)
- 
- - Run locally with Uvicorn:
-   - `uvicorn server:app --reload --host 0.0.0.0 --port 8000`
+ Frontend will be available at `http://localhost:3000`.
  
  ## Environment Variables
  
  ### Backend (`backend/.env`)
  
- - `MONGO_URL` - Mongo connection string
- - `DB_NAME` - database name
- - `CORS_ORIGINS` - comma-separated origins (or `*`)
+ - `MONGO_URL` Mongo connection string
+ - `DB_NAME` Mongo database name
+ - `CORS_ORIGINS` Comma-separated list of allowed origins (or `*`)
  
  ### Frontend (`frontend/.env`)
  
- - `REACT_APP_BACKEND_URL` - base URL of the backend (e.g. `http://localhost:8000`)
- - `ENABLE_HEALTH_CHECK` - optional build/dev toggle
+ - `REACT_APP_BACKEND_URL` Backend base URL (example: `http://localhost:8000`)
+ - `ENABLE_HEALTH_CHECK` Optional dev/build toggle (`true`/`false`)
+ - `WDS_SOCKET_PORT` Dev-server socket port (present in repo; keep as-is unless you know you need to change it)
+ 
+ ## Scripts
+ 
+### Frontend (`frontend/`)
+ 
+- `yarn start` Start dev server (CRACO)
+- `yarn build` Production build
+- `yarn test` Test runner
+ 
+### Backend (`backend/`)
+ 
+- `uvicorn --app-dir backend server:app --reload --host 0.0.0.0 --port 8000` Run the API locally from the repo root
+ 
+## API (Backend)
+ 
+Routes are mounted under `/api`:
+ 
+- `GET /api/` Returns a simple hello response
+- `POST /api/status` Inserts a status check document into MongoDB
+- `GET /api/status` Lists recent status checks
+ 
+See full API docs at `http://localhost:8000/docs`.
+ 
+ ## Customize Your Portfolio
+ 
+ Most personalization is in `frontend/src/components/Home.jsx`:
+ 
+ - Update **name/title/location**
+ - Update **links** (Portfolio/GitHub/LinkedIn)
+ - Replace **placeholder images** with your own assets
+ - Adjust **skills** list and section labels
  
  ## Deployment Notes
  
- - **Frontend** can be deployed on Vercel/Netlify as a static build (CRA build output).
- - **Backend** can be deployed to any platform that supports Python + ASGI (Render/Fly.io/Railway/etc.).
- - Make sure to set the backend `CORS_ORIGINS` to your deployed frontend URL(s).
- 
- ## Customization
- 
- - Update your name, bio, links, and images in `frontend/src/components/Home.jsx`.
- - Replace placeholder URLs like `https://myportfolio.com` with your real links.
+ - **Frontend**
+   - Build with `yarn --cwd frontend build`
+   - Deploy the build output to Netlify/Vercel/static hosting
+ - **Backend**
+   - Deploy to any ASGI-capable host (Render/Railway/Fly.io/etc.)
+   - Set production `CORS_ORIGINS` to your deployed frontend URL
+   - Use a managed MongoDB (Atlas) for production
  
  ## License
  
- Add a license if you plan to make this public.
+ Add a license file if you plan to make this public.

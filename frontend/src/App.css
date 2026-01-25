@@ -236,6 +236,8 @@ body {
   align-items: center;
   text-align: center;
   max-width: 700px;
+  position: relative;
+  padding-bottom: 120px;
   transform-style: preserve-3d;
 }
 
@@ -401,6 +403,7 @@ body {
   border-radius: 24px;
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(10px);
+  margin-bottom: 28px;
   transition: all 0.3s ease;
 }
 
@@ -418,7 +421,7 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateZ(20px);
   display: flex;
@@ -426,6 +429,21 @@ body {
   align-items: center;
   gap: 12px;
   animation: bounce-3d 2s ease-in-out infinite;
+}
+
+@media (max-height: 720px) {
+  .hero-content {
+    padding-bottom: 32px;
+  }
+
+  .scroll-indicator {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: translateZ(20px);
+    margin-top: 18px;
+    animation: none;
+  }
 }
 
 .scroll-mouse {

@@ -200,7 +200,7 @@ const Home = () => {
             }}
           >
             <img
-              src="/bio.png"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjkzNDE0NDN8MA&ixlib=rb-4.1.0&q=85"
               alt="Naveen Kumar"
               className="profile-photo"
             />

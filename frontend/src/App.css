@@ -544,8 +544,10 @@ a[href*="utm_source=emergent-badge"] {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .skill-card {
@@ -655,10 +657,10 @@ a[href*="utm_source=emergent-badge"] {
 
 .links-container {
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 

@@ -214,8 +214,9 @@ const Home = () => {
           </h1>
           
           <div className="subtitle-wrapper reveal-on-scroll">
-            <p className="subtitle typing-text">
-              {typedText}<span className="cursor-blink">|</span>
+            <p className="subtitle">
+              Computer Science Engineering Student<br />
+              Aspiring Software Developer
             </p>
           </div>
           

@@ -249,6 +249,18 @@ a[href*="utm_source=emergent-badge"] {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 12px;
+  }
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -550,6 +562,22 @@ a[href*="utm_source=emergent-badge"] {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 300px;
+  }
+}
+
 .skill-card {
   position: relative;
   background: var(--bg-secondary);
@@ -662,6 +690,14 @@ a[href*="utm_source=emergent-badge"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .links-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 400px;
+  }
 }
 
 .link-card {

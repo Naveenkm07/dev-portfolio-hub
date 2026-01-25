@@ -363,7 +363,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bio-footer">
         <div className="footer-content">
-          <p>Made with <span className="heart">♥</span> by Naveenkm07</p>
+          <p>Naveenkm07 <span className="heart">♥</span></p>
           <div className="footer-sparkle">✨</div>
         </div>
       </footer>

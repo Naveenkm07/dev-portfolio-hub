@@ -234,6 +234,43 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Links Section */}
+      <section id="links-section" className="links-section">
+        <div className="links-container">
+          <h2 className="section-title reveal-on-scroll">
+            <Rocket className="title-icon" />
+            Connect With Me
+          </h2>
+          {links.map((link, index) => {
+            const IconComponent = link.icon;
+            return (
+              <a
+                key={link.id}
+                href={link.url}
+                onClick={link.isScroll ? scrollToAbout : undefined}
+                className="link-card reveal-on-scroll link-card-3d"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onMouseMove={handleCardTilt}
+                onMouseLeave={handleCardTiltReset}
+              >
+                <div className="link-card-content">
+                  <div className={`icon-wrapper bg-gradient-to-br ${link.gradient}`}>
+                    <IconComponent size={28} />
+                  </div>
+                  <div className="link-text">
+                    <h3 className="link-title">{link.title}</h3>
+                    <p className="link-description">{link.description}</p>
+                  </div>
+                </div>
+                <div className="card-shine"></div>
+                <div className={`card-gradient-glow bg-gradient-to-r ${link.gradient}`}></div>
+                <div className="card-3d-layer"></div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section id="skills-section" className="skills-section">
         <div className="skills-container">

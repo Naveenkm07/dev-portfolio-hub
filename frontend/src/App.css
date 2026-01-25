@@ -38,6 +38,14 @@ body {
   position: relative;
 }
 
+#emergent-badge {
+  display: none !important;
+}
+
+a[href*="utm_source=emergent-badge"] {
+  display: none !important;
+}
+
 /* Bio Page */
 .bio-page {
   width: 100%;
